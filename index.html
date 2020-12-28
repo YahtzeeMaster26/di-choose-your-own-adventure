@@ -1,0 +1,27 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DI Choose Your Own Adventure</title>
+	</head>
+
+	<body>
+		<div id = "paragraphs"></div>
+
+		<script>
+let lastParagraph = null
+function appendParagraph() {
+	if (lastParagraph) lastParagraph.innerHTML = "You are running."
+	document.getElementById("paragraphs").innerHTML += "<hr></ht><div style = \"opacity: 0;\">You are running.<br><button onclick = \"appendParagraph()\">Run</button></div>";
+	setTimeout(() => (lastParagraph = document.getElementById("paragraphs").lastElementChild).style.opacity = 1, 5)
+}
+appendParagraph()
+		</script>
+		
+		<style>
+			div {
+				transition-duration: 1s;
+			}
+		</style>
+	</body>
+</html>
